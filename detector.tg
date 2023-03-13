@@ -1,0 +1,52 @@
+
+// Stainless steel
+:ELEM Manganese Mn 25 54.94*g/mole
+:ELEM Chromium Cr 24 52.0*g/mole
+:ELEM Nickel Ni 28 58.70*g/mole
+:ELEM Silicon Si 14 28.1*g/mole
+:ELEM Iron Fe 26 55.8*g/mole
+:P ss_density 8.02*g/cm3
+:MIXT stainless_steel $ss_density 5
+Mn 0.02
+Si 0.01
+Cr 0.19
+Ni 0.10
+Fe 0.68
+
+// Helium 3
+:ELEM Helium He3 3.0160293*g/mole
+
+// Gas mix
+:P pressure 2*bar
+:P temperature 293*kelvin
+:P boltzmann  8.617385e-11*MeV/kelvin
+:P avogadro 6.02E23
+:P molar_constant ($boltzmann*$avogadro)
+:P density ($he3_atomic_mass*$pressure)/($temperature*$molar_constant)
+
+:MATE gas_mix 1 2 $density
+:MATE_STATE gas_mix Gas
+
+//:MIXT gas_mix $density $density
+//Helium-3 1.0
+//:MATE_STATE gas_mix Gas
+//:MATE_PRESSURE  gas_mix $pressure
+
+// parameters
+:P tube_dia 8*mm
+:P tube_rad $tube_dia/2
+:P tube_half_len = $tube_dia*2
+:P wall_thickness = 0.062*25.4*mm
+
+:volu world TUBE $tube_rad 0 $tube_half_len G4_Galactic
+:vis world OFF
+
+// Detector
+:volu wall TUBE $tube_rad $tube_rad-$wall_thickness $tube_half_len
+:color wall 0.66 0.70 0.76 //Crayola
+
+//rotation matrix
+:rotm r000 0 0 0 
+
+:place target_box(S) 1 world r000 0 0 0
+
