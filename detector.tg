@@ -14,7 +14,8 @@ Ni 0.10
 Fe 0.68
 
 // Helium 3
-:ELEM Helium He3 3.0160293*g/mole
+:P he3_atomic_mass 3.0160293*g/mole
+:ELEM Helium He3 2 $he3_atomic_mass
 
 // Gas mix
 :P pressure 2*bar
@@ -24,7 +25,7 @@ Fe 0.68
 :P molar_constant ($boltzmann*$avogadro)
 :P density ($he3_atomic_mass*$pressure)/($temperature*$molar_constant)
 
-:MATE gas_mix 1 2 $density
+:MATE gas_mix 2 $he3_atomic_mass $density
 :MATE_STATE gas_mix Gas
 
 //:MIXT gas_mix $density $density
@@ -33,20 +34,25 @@ Fe 0.68
 //:MATE_PRESSURE  gas_mix $pressure
 
 // parameters
-:P tube_dia 8*mm
-:P tube_rad $tube_dia/2
-:P tube_half_len = $tube_dia*2
-:P wall_thickness = 0.062*25.4*mm
+:P tube_diameter 8*mm
+:P tube_rad $tube_diameter/2
+:P tube_half_length $tube_diameter*2
+:P wall_thickness 0.03*25.4*mm
+:P tube_inner_radius $tube_rad-$wall_thickness
+:P gas_outer_radius $tube_inner_radius
 
-:volu world TUBE $tube_rad 0 $tube_half_len G4_Galactic
+:volu world TUBE 0*mm $tube_rad*1.1 $tube_half_length G4_Galactic
 :vis world OFF
 
 // Detector
-:volu wall TUBE $tube_rad $tube_rad-$wall_thickness $tube_half_len
+:volu wall TUBE $tube_inner_radius $tube_rad $tube_half_length stainless_steel
 :color wall 0.66 0.70 0.76 //Crayola
+:volu gas_volume TUBE 0*mm $gas_outer_radius $tube_half_length gas_mix
+:color gas_volume 0.36 0.68 0.93  //blue jeans
 
 //rotation matrix
 :rotm r000 0 0 0 
 
-:place target_box(S) 1 world r000 0 0 0
+:place wall 1 world r000 0.0 0.0 0.0
+:place gas_volume 1 world r000 0.0 0.0 0.0
 

@@ -7,7 +7,6 @@
 #include <G4ScoringManager.hh>
 #include "SteppingVerbose.h"
 #include "RunManager.h"
-#include "ExTGDetectorConstruction.hh"
 #include "FTFP_BERT.hh"
 #include "G4StepLimiterPhysics.hh"
 /**
@@ -18,7 +17,7 @@ int main(int argc, char **argv)
     // inherit G4SteppingVerbose instead of G4UserSteppingAction to record data
     G4VSteppingVerbose::SetInstance(new SteppingVerbose); // must be before run manager
     RunManager* run = new RunManager; // customized run control
-    run->SetUserInitialization(new ExTGDetectorConstruction);
+    G4ScoringManager::GetScoringManager(); // enable built-in scoring cmds
 
     auto physicsList = new FTFP_BERT;
     physicsList->RegisterPhysics(new G4StepLimiterPhysics());
