@@ -1,3 +1,5 @@
+// He3 Detector definition material(SS or Al), diameter, length, %Ar, %CO2	
+:He3Detector SS 8 20 5 0 0
 
 // Stainless steel
 :ELEM Manganese Mn 25 54.94*g/mole
@@ -24,6 +26,8 @@ Fe 0.68
 :P avogadro 6.02E23
 :P molar_constant ($boltzmann*$avogadro)
 :P density ($he3_atomic_mass*$pressure)/($temperature*$molar_constant)
+:P pcArgon 0
+:P pcCO2 0
 
 :MATE gas_mix 2 $he3_atomic_mass $density
 :MATE_STATE gas_mix Gas

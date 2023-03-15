@@ -1,6 +1,6 @@
 # ninja log v5
 30	915	1678637958695175710	CMakeFiles/He3Detector.dir/src/PrimaryGeneratorAction.cpp.o	7b3c3f12dee35da7
-2018	2240	1678733347204667956	He3Detector	294ad2edf7646c14
+5	227	1678799251634125385	He3Detector	a9f17efc0eb3f374
 7	992	1678798796066847342	CMakeFiles/He3Detector.dir/src/TextDetectorBuilder.cpp.o	dc892ad73e4475df
 6	920	1678711631284488467	CMakeFiles/He3Detector.dir/src/SaveAndResetEvent.cpp.o	38e5223ccbc6b3df
 6	333	1678562775963405567	CMakeFiles/He3Detector.dir/src/DetectorMessenger.cc.o	2e4548a5666658a3
@@ -9,13 +9,14 @@
 8	1059	1678711350570602556	CMakeFiles/He3Detector.dir/src/SteppingVerbose.cc.o	a14439524b4d0a4a
 11	2018	1678733346979597200	CMakeFiles/He3Detector.dir/src/ExTGDetectorConstruction.cc.o	ebe6508aef48a371
 5	924	1678562743081279692	CMakeFiles/He3Detector.dir/src/DetectorConstruction.cc.o	f5b7e508eb2607bf
-11	1125	1678719165987111428	CMakeFiles/He3Detector.dir/src/RunManager.cpp.o	8059a7149cd252c5
-0	592	1678799251402102340	build.ninja	3bcca098324578c4
+1	574	1678889131091886074	build.ninja	3bcca098324578c4
 7	804	1678715800679572142	CMakeFiles/He3Detector.dir/src/RunAction.cc.o	6649d44104e7c19e
 6	872	1678711631234300054	CMakeFiles/He3Detector.dir/src/StackingAction.cc.o	3210d2567c93a410
-30	789	1678637958564226488	CMakeFiles/He3Detector.dir/src/TGDetectorConstruction.cc.o	15c7ea8c1ec0e0e7
+5	872	1678711631234299637	CMakeFiles/He3Detector.dir/src/EventAction.cc.o	2f88e6da57f8ae4d
 7	1057	1678798796132715788	CMakeFiles/He3Detector.dir/src/detector.cpp.o	ef416141f3ece1bd
 12	566	1678562820961243847	CMakeFiles/He3Detector.dir/src/He3GasMix.cpp.o	6bf962c8e0eaf8fb
-5	872	1678711631234299637	CMakeFiles/He3Detector.dir/src/EventAction.cc.o	2f88e6da57f8ae4d
-1	574	1678799251402102340	build.ninja	3bcca098324578c4
-5	227	1678799251634125385	He3Detector	a9f17efc0eb3f374
+30	789	1678637958564226488	CMakeFiles/He3Detector.dir/src/TGDetectorConstruction.cc.o	15c7ea8c1ec0e0e7
+17	1457	1678889136168877356	CMakeFiles/He3Detector.dir/src/LineProcessor.cpp.o	330ffd4c15049a7f
+17	2019	1678889136732066109	CMakeFiles/He3Detector.dir/src/FTFP_BERT_LE.cpp.o	1ca1b9d430bf01d2
+16	2513	1678889137224068024	CMakeFiles/He3Detector.dir/main.cpp.o	37e80532ededfd1c
+2513	2737	1678889137453869018	He3Detector	d117c959e834d50a

@@ -9,6 +9,7 @@
 #include "RunManager.h"
 #include "FTFP_BERT.hh"
 #include "G4StepLimiterPhysics.hh"
+#include "FTFP_BERT_LE.hh"
 /**
  * The main function that calls individual components.
  */
@@ -19,7 +20,7 @@ int main(int argc, char **argv)
     RunManager* run = new RunManager; // customized run control
     G4ScoringManager::GetScoringManager(); // enable built-in scoring cmds
 
-    auto physicsList = new FTFP_BERT;
+    auto physicsList = new FTFP_BERT_LE;
     physicsList->RegisterPhysics(new G4StepLimiterPhysics());
     run->SetUserInitialization(physicsList);
 

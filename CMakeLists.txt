@@ -30,6 +30,6 @@ file(GLOB headers ${PROJECT_SOURCE_DIR}/include/*.hh)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(He3Detector main.cpp src/He3GasMix.cpp include/PrimaryGeneratorAction.h include/SteppingVerbose.h include/RunManager.h include/StackingAction.h include/SaveAndResetEvent.h src/SteppingVerbose.cc src/StackingAction.cc src/SaveAndResetEvent.cpp include/detector.h src/detector.cpp src/TextDetectorBuilder.cpp include/TextDetectorBuilder.h include/LineProcessor.h src/LineProcessor.cpp include/Generator.h include/EventAction.h)
+add_executable(He3Detector main.cpp include/PrimaryGeneratorAction.h include/SteppingVerbose.h include/RunManager.h include/StackingAction.h include/SaveAndResetEvent.h src/SteppingVerbose.cc src/SaveAndResetEvent.cpp include/detector.h src/detector.cpp src/TextDetectorBuilder.cpp include/TextDetectorBuilder.h include/LineProcessor.h src/LineProcessor.cpp include/Generator.h include/EventAction.h)
 target_link_libraries(He3Detector ${Geant4_LIBRARIES})
 
